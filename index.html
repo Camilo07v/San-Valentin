@@ -1,47 +1,17 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Invitación a San Valentín encoded</title>
-</head>
-<body>
-    <div class="container">
-        
-        <div id="gifContainer">
-            <img id="gifContainerImg" src="https://media1.tenor.com/m/x-hzFSTRfj8AAAAC/chococat.gif" alt="Ositos Iniciales" ">
-        </div>
-        <div id="happyGifContainer" style="display: none;">
-            <img src="https://media1.tenor.com/m/x-hzFSTRfj8AAAAC/chococat.gif" alt="Ositos Felices" style="width: 100%; height: 100%;">
-        </div>
-        <div id="happyGifContainer2" style="display: none;">
-            <img src="https://media1.tenor.com/m/x-hzFSTRfj8AAAAC/chococat.gif" alt="Ositos Felices" style="width: 100%; height: 100%;">
-        </div>
-        <div id="happyGifContainer3" style="display: none;">
-            <img src="https://media1.tenor.com/m/x-hzFSTRfj8AAAAC/chococat.gif" alt="Ositos Felices" style="width: 100%; height: 100%;">
-        </div>
-        <div id="happyGifContainer4" style="display: none;">
-            <img src="https://media1.tenor.com/m/x-hzFSTRfj8AAAAC/chococat.gif" alt="Ositos Felices" style="width: 100%; height: 100%;">
-        </div>
-        <div id="sadGifContainer" style="display: none;">
-            <img src="https://media1.tenor.com/m/x-hzFSTRfj8AAAAC/chococat.gif" alt="Osito Triste" style="width: 80%; height: 80%;">
-        </div>
-        <div id="sadGifContainer1" style="display: none;">
-            <img src="https://media1.tenor.com/m/x-hzFSTRfj8AAAAC/chococat.gif" alt="Osito Triste" style="width: 80%; height: 80%;">
-        </div>
-        <div id="sadGifContainer2" style="display: none;">
-            <img src="https://media1.tenor.com/m/x-hzFSTRfj8AAAAC/chococat.gif" alt="Osito Triste" style="width: 80%; height: 80%;">
-        </div>
-        
-        <h1 id="question">¿Quieres ser mi San Valentín?</h1>
-        <div id="messageContainer" style="display: none;"></div>
+const siBtn = document.getElementById("siBtn");
+const noBtn = document.getElementById("noBtn");
+const gif = document.getElementById("gifContainerImg");
+const question = document.getElementById("question");
 
-        <button id="siBtn">Sí</button>
-        <button id="noBtn">No</button>
-        
-    </div>
+siBtn.addEventListener("click", () => {
+    question.textContent = "¡Sabía que dirías que sí! 💖";
+    gif.src = "chococat.gif";
+});
 
-    <script src="script.js"></script>
-</body>
-</html>
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.position = "absolute";
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+});
